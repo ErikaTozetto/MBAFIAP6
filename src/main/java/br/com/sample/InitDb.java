@@ -1,7 +1,7 @@
 package br.com.sample;
 
-import br.com.sample.domain.orm.Book;
-import br.com.sample.domain.repository.BookRepository;
+import br.com.sample.domain.orm.Pedido;
+import br.com.sample.domain.repository.PedidoRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -10,10 +10,10 @@ import org.springframework.stereotype.Component;
 @AllArgsConstructor
 public class InitDb implements CommandLineRunner {
 
-    private BookRepository bookRepository;
+    private PedidoRepository pedidoRepository;
 
     @Override
     public void run(String... strings) throws Exception {
-        bookRepository.save(Book.builder().author("bla").pages(1).title("bli").build());
+        pedidoRepository.save(Pedido.builder().origem("Av Prof Syllas Mattos").quilometros(15).destino("Av dos Estados").build());
     }
 }
